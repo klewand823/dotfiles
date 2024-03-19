@@ -86,6 +86,7 @@ alias bbuilder="podman run -it -v/opt/bios:/opt/bios bios"
 alias ggrep="git log --grep"
 alias ezrc="$EDITOR ~/.zshrc"
 alias cl="clear"
+alias hist="cat ~/.histfile | fzf"
 
 # pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
