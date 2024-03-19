@@ -54,7 +54,7 @@ return {
       end, { desc = 'Format current buffer with LSP' })
     end
 
-    local servers = require("athrail.plugins.lsp.servers")
+    local servers = require("klewand823.plugins.lsp.servers")
     -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = cmp_nvim_lsp.default_capabilities(capabilities)

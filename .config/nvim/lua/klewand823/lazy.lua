@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'athrail.plugins' },
-  { import = 'athrail.plugins.lsp' },
+  { import = 'klewand823.plugins' },
+  { import = 'klewand823.plugins.lsp' },
 })
