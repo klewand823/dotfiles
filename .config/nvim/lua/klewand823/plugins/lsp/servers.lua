@@ -5,6 +5,7 @@ Servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cmake = {},
+  bashls = { filetypes = { 'sh' } },
 
   lua_ls = {
     Lua = {
