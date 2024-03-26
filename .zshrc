@@ -87,6 +87,7 @@ alias ggrep="git log --grep"
 alias ezrc="$EDITOR ~/.zshrc"
 alias cl="clear"
 alias hist="cat ~/.histfile | fzf"
+alias notes="nvim ~/notes.md"
 
 # pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
