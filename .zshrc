@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -51,25 +44,16 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
 # aliases
 alias ..="cd .."
-alias ls="exa -1 --group-directories-first"
+alias exa="exa -1 --group-directories-first"
 alias ll="ls -l"
 alias la="ls -A"
-alias l="ls"
 alias vim="nvim"
 alias vi="nvim"
 alias cb="git branch | fzf | xargs git checkout"
 alias vm="ssh klewand@$VM"
+alias sc="ssh zsc2-login.zsc2.intel.com"
 alias mu="$HOME/work/go/bin/manifestui"
 alias wp="python $HOME/work/cmdTools/worktree_proj.py"
 alias cat="batcat"
@@ -133,12 +117,4 @@ vm_mount() {
   sshfs klewand@gkgapp0300.ger.corp.intel.com:D:/ ~/vm
 }
 
-delbr() {
-  branches=$(git branch | fzf -m)
-  if [[ $? -eq 0 ]]; then
-    echo $branches | xargs git branch -D
-  fi
-}
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
