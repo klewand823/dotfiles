@@ -16,8 +16,9 @@ keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic 
 keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- Buffer jumping
-keymap.set('n', '<C-q>', function() vim.cmd('bd') end, { desc = 'Delete current buffer' })
+-- Quickfix navigation
+keymap.set('n', '<leader>cn', ':cnext<Return>', { desc = 'Go to next item on quickfix list' })
+keymap.set('n', '<leader>cp', ':cprev<Return>', { desc = 'Go to previous item on quickfix list' })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit window [v]ertically" }) -- split window vertically
