@@ -6,6 +6,7 @@ Servers = {
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cmake = {},
   bashls = { filetypes = { 'sh' } },
+  rust_analyzer = {},
 
   lua_ls = {
     Lua = {
