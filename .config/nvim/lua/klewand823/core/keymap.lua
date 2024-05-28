@@ -20,6 +20,11 @@ keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnosti
 keymap.set('n', '<leader>cn', ':cnext<Return>', { desc = 'Go to next item on quickfix list' })
 keymap.set('n', '<leader>cp', ':cprev<Return>', { desc = 'Go to previous item on quickfix list' })
 
+-- Buffer ops
+keymap.set('n', '<leader>bn', ':bnext<Return>', { desc = 'Go to next buffer' })
+keymap.set('n', '<leader>bp', ':bprev<Return>', { desc = 'Go to previous buffer' })
+keymap.set('n', '<leader>bq', ':bdelete<Return>', { desc = 'Delete current buffer' })
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit window [v]ertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "[S]plit window [h]orizontally" }) -- split window horizontally
