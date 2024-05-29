@@ -5,6 +5,7 @@ local keymap = vim.keymap -- for conciseness
 
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap.set('n', '<Esc>', ':noh<Return><Esc>', { silent = true })
+keymap.set('i', 'jj', '<Esc>', { silent = true })
 
 -- Remap for dealing with word wrap
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
