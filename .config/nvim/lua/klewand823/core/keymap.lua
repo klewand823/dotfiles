@@ -23,7 +23,7 @@ keymap.set('n', '<leader>cp', ':cprev<Return>', { desc = 'Go to previous item on
 -- Buffer ops
 keymap.set('n', '<leader>bn', ':bnext<Return>', { desc = 'Go to next buffer' })
 keymap.set('n', '<leader>bp', ':bprev<Return>', { desc = 'Go to previous buffer' })
-keymap.set('n', '<leader>bq', ':bdelete<Return>', { desc = 'Delete current buffer' })
+keymap.set('n', '<leader>bd', ':bdelete<Return>', { desc = 'Delete current buffer' })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit window [v]ertically" }) -- split window vertically
