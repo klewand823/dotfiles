@@ -2,7 +2,6 @@ Servers = {
   clangd = {},
   gopls = {},
   pyright = {},
-  tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cmake = {},
   bashls = { filetypes = { 'sh' } },

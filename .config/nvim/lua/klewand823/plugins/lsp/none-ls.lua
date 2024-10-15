@@ -24,7 +24,9 @@ return {
 
     null_ls.setup({
       sources = {
-        formatting.prettier,
+        formatting.prettier.with {
+          filetypes = { 'html', 'json', 'graphql', 'markdown' },
+        },
         formatting.black,
         formatting.gofmt,
       },

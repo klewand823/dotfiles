@@ -18,13 +18,14 @@ keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating 
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Quickfix navigation
-keymap.set('n', '<leader>cn', ':cnext<Return>', { desc = 'Go to next item on quickfix list' })
-keymap.set('n', '<leader>cp', ':cprev<Return>', { desc = 'Go to previous item on quickfix list' })
+keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = 'Go to next item on quickfix list' })
+keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = 'Go to previous item on quickfix list' })
 
 -- Buffer ops
-keymap.set('n', '<leader>bn', ':bnext<Return>', { desc = 'Go to next buffer' })
-keymap.set('n', '<leader>bp', ':bprev<Return>', { desc = 'Go to previous buffer' })
-keymap.set('n', '<leader>bd', ':bdelete<Return>', { desc = 'Delete current buffer' })
+keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = 'Go to next buffer' })
+keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', { desc = 'Go to previous buffer' })
+keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
+keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = 'Delete current buffer' })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit window [v]ertically" }) -- split window vertically

@@ -6,6 +6,7 @@ vim.o.cursorline = true -- highlight the current cursor line
 
 vim.o.breakindent = true
 vim.o.undofile = true
+vim.o.scrolloff = 30
 -- Indentation setup
 vim.o.expandtab = true
 vim.o.smartindent = true
