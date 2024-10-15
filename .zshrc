@@ -1,8 +1,9 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt nomatch notify
+setopt appendhistory
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -30,9 +31,11 @@ bindkey '^F' autosuggest-accept
 # variables
 export VM=gkgapp0300.ger.corp.intel.com
 export PATH=/usr/lib/cargo/bin:/usr/lib/llvm-14/bin:$HOME/work/cmdTools:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/bin/nvim-linux64/bin:$PATH
+export PATH=$HOME/.fzf/bin/fzf:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/work/go/bin:$PATH
+export PATH=$HOME/work/gorepo/bin:$PATH
 export EDITOR="nvim"
 export PYENV_ROOT="$HOME/.pyenv"
 export BAT_THEME="Catppuccin-mocha"
@@ -47,11 +50,12 @@ export FZF_DEFAULT_OPTS=" \
 # aliases
 alias ..="cd .."
 alias exa="exa -1 --group-directories-first"
+alias ls="ls -h"
 alias ll="ls -l"
 alias la="ls -A"
 alias vim="nvim"
 alias vi="nvim"
-alias cb="git branch | fzf | xargs git checkout"
+alias cb="git branch | ~/.fzf/bin/fzf | xargs git checkout"
 alias vm="ssh klewand@$VM"
 alias sc="ssh zsc2-login.zsc2.intel.com"
 alias mu="$HOME/work/go/bin/manifestui"
@@ -70,7 +74,6 @@ alias bbuilder="podman run -it -v/opt/bios:/opt/bios bios"
 alias ggrep="git log --grep"
 alias ezrc="$EDITOR ~/.zshrc"
 alias cl="clear"
-alias hist="cat ~/.histfile | fzf"
 alias notes="nvim ~/notes.md"
 
 # pyenv
@@ -82,11 +85,11 @@ eval "$(pyenv virtualenv-init -)"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# direnv hook
-eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)" # direnv hook
+eval "$(zoxide init zsh)" # zoxide hook
+eval "$(starship init zsh)" # starship hook
 
-# zoxide
-eval "$(zoxide init zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # custom functions
 new_branch() {
@@ -98,7 +101,11 @@ biosid() {
 }
 
 qc() {
-  py CrTools/ccg-tools/QualityCheck/QualityCheck.py -W . -R firmware.boot.uefi.iafw.intel -p $1 -i ../qc.ini
+  pyenv activate quality_check
+  export TEAMCITY_BUILD_PROPERTIES_FILE="../teamcity.props"
+  env PYTHONPATH=/opt/bios/CrTools python CrTools/ccg-tools/QualityCheck/QualityCheck.py -W . -R firmware.boot.uefi.iafw.intel -p $1 -i ../qc.ini
+  unset TEAMCITY_BUILD_PROPERTIES_FILE
+  source deactivate
 }
 
 sync_notes() {
@@ -117,4 +124,11 @@ vm_mount() {
   sshfs klewand@gkgapp0300.ger.corp.intel.com:D:/ ~/vm
 }
 
-eval "$(starship init zsh)"
+gen_header() {
+  python3 launchers/main.py header_diff osxml_header_compare --od ~/work/osxml/output --ifd ~/work/osxml/output/ifd --osbrd ~/work/onesourcebundle/latest --aord ~/work/osxml --su $1 $2
+}
+
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
