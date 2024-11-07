@@ -24,7 +24,7 @@ keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = 'Go to previous item on
 -- Buffer ops
 keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = 'Go to next buffer' })
 keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', { desc = 'Go to previous buffer' })
-keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
+keymap.set('n', '<leader>bd', '<cmd>bp<bar>sp<bar>bn<bar>bd<CR>', { desc = 'Delete current buffer' })
 keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = 'Delete current buffer' })
 
 -- window management
