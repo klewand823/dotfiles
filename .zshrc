@@ -49,9 +49,9 @@ export FZF_DEFAULT_OPTS=" \
 
 # aliases
 alias ..="cd .."
-alias ls="eza -h"
-alias ll="eza -lh"
-alias la="eza -lAh"
+alias ls="eza --group-directories-first -h"
+alias ll="eza --group-directories-first -lh"
+alias la="eza --group-directories-first -lAh"
 alias vim="nvim"
 alias vi="nvim"
 alias cat="batcat"
@@ -77,6 +77,7 @@ bindkey "^[[1;5D" backward-word
 eval "$(direnv hook zsh)" # direnv hook
 eval "$(zoxide init zsh)" # zoxide hook
 eval "$(starship init zsh)" # starship hook
+eval "$(gorepo completion zsh)" # setup completions for gorepo
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
