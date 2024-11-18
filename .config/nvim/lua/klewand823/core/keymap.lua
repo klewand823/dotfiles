@@ -18,13 +18,15 @@ keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating 
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Quickfix navigation
+keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = 'Open quickfix' })
+keymap.set('n', '<leader>cx', '<cmd>cclose<CR>', { desc = 'Close quickfix' })
 keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = 'Go to next item on quickfix list' })
 keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = 'Go to previous item on quickfix list' })
 
 -- Buffer ops
 keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = 'Go to next buffer' })
 keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', { desc = 'Go to previous buffer' })
-keymap.set('n', '<leader>bd', '<cmd>bp<bar>sp<bar>bn<bar>bd<CR>', { desc = 'Delete current buffer' })
+keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = 'Delete current buffer' })
 keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = 'Delete current buffer' })
 
 -- window management
@@ -38,6 +40,12 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- go to tag
+keymap.set("n", "gt", function()
+  local tag = vim.fn.expand("<cword>")
+  vim.cmd("tag " .. tag)
+end, { desc = "Go to tag" })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
