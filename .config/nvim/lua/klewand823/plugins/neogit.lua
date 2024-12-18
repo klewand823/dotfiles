@@ -9,5 +9,8 @@ return {
     "ibhagwan/fzf-lua",              -- optional
     "echasnovski/mini.pick",         -- optional
   },
-  config = true
+  config = function()
+    vim.keymap.set('n', '<leader>gg', '<CMD>Neogit<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>gl', '<CMD>NeogitLogCurrent<CR>', { noremap = true, silent = true })
+  end
 }
