@@ -1,6 +1,6 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
-  branch = "canary",
+  branch = "main",
   dependencies = {
     { "github/copilot.vim" },
     { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -37,10 +37,10 @@ return {
       show_diff = {
         normal = 'gd'
       },
-      show_system_prompt = {
+      show_info = {
         normal = 'gp'
       },
-      show_user_selection = {
+      show_context = {
         normal = 'gs'
       },
     },

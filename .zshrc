@@ -29,13 +29,21 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^F' autosuggest-accept
 
 # variables
-export VM=gkgapp0300.ger.corp.intel.com
-export PATH=/usr/lib/cargo/bin:/usr/lib/llvm-14/bin:$HOME/work/cmdTools:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/bin/nvim-linux64/bin:$PATH
+export PATH=/usr/lib/cargo/bin:$PATH
+export PATH=/usr/lib/llvm-14/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin/nvim-linux64/bin:$PATH
 export PATH=$HOME/.fzf/bin/fzf:$PATH
 export PATH=$HOME/go/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/work/go/bin:$PATH
-export PATH=$HOME/work/gorepo/bin:$PATH
+export PATH=$HOME/github/klewand-tools/cmdTools:$PATH
+export PATH=$HOME/github/klewand-tools/gorepo/bin:$PATH
+export MANPAGER="nvim +Man!"
+export MANWIDTH=999
+
 export EDITOR="nvim"
 export PYENV_ROOT="$HOME/.pyenv"
 export BAT_THEME="Catppuccin-mocha"
@@ -62,8 +70,7 @@ alias umr="git -C /opt/bios/CrManifest pnt"
 alias workmode="kinit && mount_rclone.sh"
 alias ggrep="git log --grep"
 alias cl="clear"
-alias gs="gorepo sync"
-
+alias \?\?="gh copilot"
 
 # pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -83,7 +90,7 @@ eval "$(gorepo completion zsh)" # setup completions for gorepo
 
 # custom functions
 new_branch() {
-  git checkout -b pull_request/klewand823/`date +"%Y-%m-%d_%H-%M"`/$1
+  git checkout -b pull_request/klewand823/`date +"%Y-%m-%d_%H-%M"`/$(echo $* | sed 's/ /_/gi')
 }
 
 biosid() {
@@ -108,10 +115,6 @@ gh_commit() {
 
 hsd() {
   xdg-open "https://hsdes.intel.com/appstore/article/#/$1"
-}
-
-vm_mount() {
-  sshfs klewand@gkgapp0300.ger.corp.intel.com:D:/ ~/vm
 }
 
 gen_header() {

@@ -20,8 +20,8 @@ keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnosti
 -- Quickfix navigation
 keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = 'Open quickfix' })
 keymap.set('n', '<leader>cx', '<cmd>cclose<CR>', { desc = 'Close quickfix' })
-keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = 'Go to next item on quickfix list' })
-keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = 'Go to previous item on quickfix list' })
+keymap.set('n', '<M-j>', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
+keymap.set('n', '<M-k>', '<cmd>cprev<CR>', { desc = 'Go to previous item in quickfix list' })
 
 -- Buffer ops
 keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = 'Go to next buffer' })

@@ -8,4 +8,11 @@ return {
     main = 'ibl',
     opts = {},
   },
+  {
+    "lewis6991/spaceless.nvim",
+    opts = {}
+  },
+  {
+    "pplatta/vim-uefi"
+  }
 }

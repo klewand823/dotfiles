@@ -117,22 +117,23 @@ return {
       vim.keymap.set('n', '<leader>fG', ':LiveGrepGitRoot<cr>', { desc = '[F]ind by [G]rep on Git Root' })
       vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
       vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
+      vim.keymap.set('n', '<leader>ft', require('telescope.builtin').tags, { desc = '[F]ind in [T]ags' })
 
-      -- local colors = require("catppuccin.palettes").get_palette()
+      -- local colors = require("tokyonight.colors.night")
       -- local TelescopeColor = {
-      --   TelescopeMatching = { fg = colors.flamingo },
-      --   TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
+      --   TelescopeMatching = { fg = colors.blue5 },
+      --   TelescopeSelection = { fg = colors.blue0, bg = colors.bg_highlight, bold = true },
       --
-      --   TelescopePromptPrefix = { bg = colors.surface0 },
-      --   TelescopePromptNormal = { bg = colors.surface0 },
-      --   TelescopeResultsNormal = { bg = colors.mantle },
-      --   TelescopePreviewNormal = { bg = colors.mantle },
-      --   TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-      --   TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
-      --   TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-      --   TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
-      --   TelescopeResultsTitle = { fg = colors.mantle },
-      --   TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
+      --   TelescopePromptPrefix = { bg = colors.bg },
+      --   TelescopePromptNormal = { bg = colors.bg },
+      --   TelescopeResultsNormal = { bg = colors.bg },
+      --   TelescopePreviewNormal = { bg = colors.bg },
+      --   TelescopePromptBorder = { bg = colors.bg, fg = colors.bg },
+      --   TelescopeResultsBorder = { bg = colors.bg, fg = colors.bg },
+      --   TelescopePreviewBorder = { bg = colors.bg, fg = colors.bg },
+      --   TelescopePromptTitle = { bg = colors.magenta, fg = colors.bg },
+      --   TelescopeResultsTitle = { fg = colors.bg },
+      --   TelescopePreviewTitle = { bg = colors.green, fg = colors.bg },
       -- }
       --
       -- for hl, col in pairs(TelescopeColor) do
