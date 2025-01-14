@@ -50,6 +50,10 @@ export BAT_THEME="Catppuccin-mocha"
 export userdomain="WORKGROUP"
 export USERNAME="klewand"
 
+export http_proxy=http://proxy-dmz.intel.com:912/
+export https_proxy=http://proxy-dmz.intel.com:912/
+export no_proxy=intel.com,.intel.com,localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8
+
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
