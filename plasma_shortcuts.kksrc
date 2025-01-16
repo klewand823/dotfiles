@@ -1,13 +1,17 @@
 [ActivityManager][Global Shortcuts]
 switch-to-activity-683a083e-fa70-426e-8c72-7a2906558c28=
 
-[Custom Commands][net.local.konsole-2.desktop]
-Exec=konsole -e nvim $HOME/work/devjrnl.md
-Name=devjrnl
+[Custom Commands][net.local.kitty-2.desktop]
+Exec=kitty nvim /home/klewand/notes.md
+Name=notes.md
 
-[Custom Commands][net.local.konsole.desktop]
-Exec=konsole -e nvim $HOME/notes.md
-Name=notes
+[Custom Commands][net.local.kitty-3.desktop]
+Exec=kitty nvim /home/klewand/work/devjrnl.md
+Name=devjrnl.md
+
+[Custom Commands][net.local.kitty.desktop]
+Exec=kitty tmux
+Name=kitty
 
 [KDE Keyboard Layout Switcher][Global Shortcuts]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L
@@ -17,10 +21,10 @@ Switch to Next Keyboard Layout=Meta+Alt+K
 AboutApp=
 AboutKDE=
 Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Alt+Left; Back
+Back=Back; Alt+Left
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
@@ -54,7 +58,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -65,7 +69,7 @@ Open=Ctrl+O
 OpenContextMenu=Shift+F10; Menu
 OpenMainMenu=F10
 OpenRecent=
-Paste=Ctrl+V; Shift+Ins
+Paste=Shift+Ins; Ctrl+V
 Paste Selection=Ctrl+Shift+Ins
 Preferences=Ctrl+Shift+,
 PrevCompletion=Ctrl+Up
@@ -74,7 +78,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=Refresh; F5
+Reload=F5; Refresh
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -108,7 +112,7 @@ Toggle Screen Reader On and Off=
 [kcm_touchpad][Global Shortcuts]
 Disable Touchpad=Touchpad Off
 Enable Touchpad=Touchpad On
-Toggle Touchpad=Touchpad Toggle; Meta+Ctrl+Zenkaku Hankaku
+Toggle Touchpad=Meta+Ctrl+Zenkaku Hankaku; Touchpad Toggle
 
 [kmix][Global Shortcuts]
 decrease_microphone_volume=Microphone Volume Down
@@ -117,12 +121,12 @@ decrease_volume_small=Shift+Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
 increase_volume_small=Shift+Volume Up
-mic_mute=Meta+Volume Mute; Microphone Mute
+mic_mute=Microphone Mute; Meta+Volume Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Meta+Esc; Screensaver
+Lock Session=Screensaver; Meta+Esc
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=
@@ -137,7 +141,7 @@ Cycle Overview Opposite=
 Decrease Opacity=
 Edit Tiles=Ctrl+Shift+T
 Expose=Ctrl+F9
-ExposeAll=Ctrl+F10; Launch (C)
+ExposeAll=Launch (C); Ctrl+F10
 ExposeClass=Ctrl+F7
 ExposeClassCurrentDesktop=
 Grid View=Meta+G
@@ -161,7 +165,7 @@ Switch Window Down=Meta+Alt+Down
 Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up
-Switch to Desktop 1=Ctrl+F1; Meta+1
+Switch to Desktop 1=Meta+1; Ctrl+F1
 Switch to Desktop 10=
 Switch to Desktop 11=
 Switch to Desktop 12=
@@ -172,7 +176,7 @@ Switch to Desktop 16=
 Switch to Desktop 17=
 Switch to Desktop 18=
 Switch to Desktop 19=
-Switch to Desktop 2=Ctrl+F2; Meta+2
+Switch to Desktop 2=Meta+2; Ctrl+F2
 Switch to Desktop 20=
 Switch to Desktop 3=Meta+3; Ctrl+F3
 Switch to Desktop 4=Ctrl+F4; Meta+4
@@ -294,14 +298,14 @@ playpausemedia=Media Play
 previousmedia=Media Previous
 stopmedia=Media Stop
 
-[net.local.kitty.desktop][Global Shortcuts]
-_launch=Meta+Shift+F
+[net.local.kitty-2.desktop][Global Shortcuts]
+_launch=Meta+N
 
-[net.local.konsole-2.desktop][Global Shortcuts]
+[net.local.kitty-3.desktop][Global Shortcuts]
 _launch=Meta+D
 
-[net.local.konsole.desktop][Global Shortcuts]
-_launch=Meta+N
+[net.local.kitty.desktop][Global Shortcuts]
+_launch=Meta+T
 
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=Meta+F
@@ -312,20 +316,20 @@ _launch=Calculator
 [org.kde.konsole.desktop][Global Shortcuts]
 NewTab=
 NewWindow=
-_launch=Meta+T; Ctrl+Alt+T
+_launch=Ctrl+Alt+T
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+F2; Meta+R; Search; Alt+Space
+_launch=Search; Alt+Space; Alt+F2; Meta+R
 
 [org.kde.kscreen.desktop][Global Shortcuts]
-ShowOSD=Display; Meta+P
+ShowOSD=Meta+P; Display
 
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
-_launch=Meta+.; Meta+Ctrl+Alt+Shift+Space
+_launch=Meta+.
 
 [org.kde.spectacle.desktop][Global Shortcuts]
 ActiveWindowScreenShot=Meta+Print
@@ -335,7 +339,7 @@ OpenWithoutScreenshot=
 RecordRegion=Meta+Shift+R
 RecordScreen=Meta+Alt+R
 RecordWindow=
-RectangularRegionScreenShot=Meta+Shift+S; Meta+Shift+Print
+RectangularRegionScreenShot=Meta+Shift+Print; Meta+Shift+S
 WindowUnderCursorScreenShot=Meta+Ctrl+Print
 _launch=Print
 
@@ -355,7 +359,7 @@ Turn Off Screen=
 powerProfile=Meta+B; Battery
 
 [plasmashell][Global Shortcuts]
-activate application launcher=Meta; Alt+F1
+activate application launcher=Alt+F1; Meta
 activate task manager entry 1=
 activate task manager entry 10=
 activate task manager entry 2=
