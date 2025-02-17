@@ -11,8 +11,8 @@ return {
 
     mason_null_ls.setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "black", -- python formatter
+        -- "prettier", -- prettier formatter
+        -- "black", -- python formatter
       },
     })
 
@@ -24,11 +24,11 @@ return {
 
     null_ls.setup({
       sources = {
-        formatting.prettier.with {
-          filetypes = { 'html', 'json', 'graphql', 'markdown' },
-        },
-        formatting.black,
-        formatting.gofmt,
+        -- formatting.prettier.with {
+        --   filetypes = { 'html', 'json', 'graphql', 'markdown' },
+        -- },
+        -- formatting.black,
+        -- formatting.gofmt,
       },
       on_attach = function(current_client, bufnr)
         if current_client.supports_method("textDocument/formatting") then
