@@ -48,6 +48,7 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook fish)" # direnv hook
 eval "$(zoxide init fish)" # zoxide hook
 eval "$(starship init fish)" # starship hook
+fzf --fish | source # fzf integration
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -63,18 +64,18 @@ end
 
 function qc
   pyenv activate quality_check
-  export TEAMCITY_BUILD_PROPERTIES_FILE="../teamcity.props"
-  env PYTHONPATH=/opt/bios/CrTools python CrTools/ccg-tools/QualityCheck/QualityCheck.py -W . -R firmware.boot.uefi.iafw.intel -p $1 -i ../qc.ini
-  unset TEAMCITY_BUILD_PROPERTIES_FILE
-  source deactivate
+  set -x TEAMCITY_BUILD_PROPERTIES_FILE "../teamcity.props"
+  env PYTHONPATH=/opt/bios/CrTools python CrTools/ccg-tools/QualityCheck/QualityCheck.py -W . -R firmware.boot.uefi.iafw.intel -p $argv[1] -i ../qc.ini
+  set -u TEAMCITY_BUILD_PROPERTIES_FILE
+  pyenv deactivate
 end
 
 function gh_commit
-  xdg-open "https://github.com/intel-restricted/firmware.boot.uefi.iafw.intel/commit/$1"
+  xdg-open "https://github.com/intel-restricted/firmware.boot.uefi.iafw.intel/commit/$argv[1]"
 end
 
 function hsd
-  xdg-open "https://hsdes.intel.com/appstore/article/#/$1"
+  xdg-open "https://hsdes.intel.com/appstore/article/#/$argv[1]"
 end
 
 function gen_header
