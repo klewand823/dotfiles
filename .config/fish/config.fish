@@ -55,7 +55,7 @@ if status is-interactive
 end
 
 function new_branch
-  git checkout -b pull_request/klewand823/`date +"%Y-%m-%d_%H-%M"`/$(echo $argv | sed 's/ /_/gi')
+  git checkout -b pull_request/klewand823/$(date +"%Y-%m-%d_%H-%M")/$(echo $argv | sed 's/ /_/gi')
 end
 
 function biosid
